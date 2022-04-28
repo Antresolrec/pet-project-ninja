@@ -1,0 +1,156 @@
+.intro
+    position: relative
+    padding: 3rem 0
+    @media (min-width: 480px)
+        padding: 1rem 0 5rem
+
+    &__head
+        margin: 0 auto
+        text-align: center
+        max-width: 45rem
+        @media (min-width: 768px)
+            max-width: 63.4rem
+        >p
+            font-size: 1.4rem
+            opacity: .7
+
+    &__buttons
+        display: inline-flex
+        gap: 1.5rem
+        margin: 2rem 0 0 0
+        @media (min-width: 768px)
+            gap: 3.2rem
+            margin: 3.2rem 0 0 0
+
+.slider-intro
+    margin: 3rem 0 0 0
+    @media (min-width: 768px)
+        margin: 10rem 0 0 0
+    @media (min-width: 1024px)
+        margin: 8rem 0 0 0
+    @media (min-width: 1280px)
+        margin: 6rem 0 0 0
+    .swiper
+        overflow: visible
+    .swiper-wrapper
+        width: auto
+        margin: 0 -1rem
+        @media (min-width: 768px)
+            margin: 0 pct-s(-20,1680)
+        @media (min-width: 1024px)
+            margin: 0 pct-s(-40,1680)
+    .swiper-slide
+        transition: transform .7s
+        padding: 0 1rem
+        width: 75%
+        @media (min-width: 480px)
+            width: 50%
+        @media (min-width: 768px)
+            width: 25%
+            padding: 0 pct-s(20,1680)
+            transform: translateY(-20rem)
+        @media (min-width: 1024px)
+            padding: 0 pct-s(40,1680)
+        &-prev,
+        &-next
+            @media (min-width: 768px)
+                transform: translateY(-7rem)
+        &-active
+            transform: translateY(0)
+            .slider-intro
+                &__card
+                    &:before
+                        opacity: 0
+                &__body
+                    >p
+                        color: $colorBlue
+            .page-bid
+                height: 4.75rem
+                opacity: 1
+    &__card
+        display: block
+        width: 100%
+        position: relative
+        z-index: 0
+        clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 20% 100%, 0 100%, 0% 20%)
+        border-top-right-radius: 1.2rem
+        border-bottom-left-radius: 1.2rem
+        overflow: hidden
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(#0A1831, .5)
+            z-index: 2
+            opacity: 1
+            pointer-events: none
+            transition: opacity .7s
+        &:hover
+            &:before
+                opacity: 0
+            .page-bid
+                height: 4.75rem
+                opacity: 1
+            .slider-intro__body
+                >p
+                    color: $colorBlue
+
+
+    &__img
+        padding-bottom: pct-s(48rem, 35.6rem)
+        z-index: 0
+    &__time
+        position: absolute
+        z-index: 1
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3)
+        background: rgba(10, 24, 49, 0.4)
+        border: 0.5px solid $colorWhite
+        border-radius: .8rem
+        padding: .5rem .8rem
+        display: inline-flex
+        align-items: center
+        gap: .4rem
+        top: 1rem
+        right: 1rem
+        @media (min-width: 768px)
+            top: .6rem
+            right: .6rem
+        @media (min-width: 1024px)
+                top: 1.2rem
+                right: 1.2rem
+        span
+            line-height: 1
+            font-size: 1.2rem
+    &__body
+        position: absolute
+        width: 100%
+        bottom: 0
+        left: 0
+        z-index: 1
+        padding: 1rem
+        @media (min-width: 768px)
+            padding: 1rem .6rem
+        @media (min-width: 1024px)
+            padding: 1.6rem 1.2rem
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            backdrop-filter: blur(2px)
+            z-index: 0
+        >p
+            font-weight: 600
+            z-index: 1
+            position: relative
+            color: $colorWhite
+            transition: color $trTime
+    .page-bid
+        height: 0
+        opacity: 0
+        transition: height $trTime, opacity $trTime

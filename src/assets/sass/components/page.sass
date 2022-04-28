@@ -1,0 +1,313 @@
+.page-logo
+    display: flex
+    align-items: center
+    flex-shrink: 0
+    z-index: 2
+
+    &:hover
+        span
+            color: $colorBlue
+        img
+            animation: shake 1.2s ease-in-out
+
+    img
+        width: 5rem
+        @media (min-width: 480px)
+            width: 6rem
+        @media (min-width: 768px)
+            width: 9rem
+
+    span
+        font-weight: 600
+        margin: 0 0 0 .3rem
+        transition: color $trTime
+        @media (min-width: 480px)
+            font-size: 2rem
+            margin: 0 0 0 .8rem
+        @media (min-width: 768px)
+            font-size: 3.6rem
+
+.page-socials
+    display: inline-flex
+    flex-wrap: wrap
+    gap: 1.6rem 2rem
+    @media (min-width: 768px)
+        gap: 1.6rem 3.5rem
+    li
+        border-radius: .8rem
+        overflow: hidden
+        width: 3.5rem
+        height: 3.5rem
+        flex-shrink: 0
+        &:hover
+            animation: shake 1.2s ease-in-out
+        img,svg
+            width: 100%
+            height: 100%
+
+.page-search
+    position: relative
+    &._open
+        .page-search__wrapper
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0)
+    &__trigger
+        display: block
+
+    &__wrapper
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        background-color: $colorBg
+        z-index: 3
+        opacity: 0
+        transform: translateY(-3rem)
+        transition: opacity $trTime, transform $trTime
+        pointer-events: none
+        border-bottom: solid .1rem $colorWhite
+        padding: 1.5rem 0
+        @media (min-width: 768px)
+            padding: 3rem 0
+
+    &__form
+        background: rgba(255, 255, 255, 0.2)
+        border: 1px solid $colorBlue
+        overflow: hidden
+        height: 5rem
+        display: flex
+        align-items: center
+        border-radius: 2rem
+        padding: 0 1rem 0 0
+        @media (min-width: 768px)
+            border-radius: 4.8rem
+            padding: 0 2rem 0 0
+        input
+            display: block
+            flex: 1 1 auto
+            background-color: transparent
+            color: $colorWhite
+            padding: 0 1rem
+            @media (min-width: 768px)
+                padding: 0 2rem
+            &::placeholder
+                color: $colorWhite
+                font-size: inherit
+
+.page-user
+    position: relative
+    z-index: 2
+    &._open
+        .submenu
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0)
+        .page-user__trigger
+            span
+                color: $colorBlue
+    .submenu
+        left: auto
+        right: 0
+        text-align: right
+    &__trigger
+        border-radius: 4.8rem
+        display: flex
+        align-items: center
+        font-size: 1.6rem
+        font-weight: 500
+        @media (min-width: 768px)
+            padding: .4rem 1.2rem .4rem .4rem
+            background: rgba(255, 255, 255, 0.2)
+            border: .1rem solid $colorBlue
+        &:hover
+            span
+                color: $colorBlue
+        img
+            border-radius: 50%
+            flex-shrink: 0
+            width: 3rem
+            height: 3rem
+            @media (min-width: 480px)
+                width: 4rem
+                height: 4rem
+        span
+            display: none
+            @media (min-width: 768px)
+                max-width: 15rem
+                white-space: nowrap
+                text-overflow: ellipsis
+                overflow: hidden
+                transition: color $trTime
+                margin: 0 0 0 .8rem
+                display: block
+                font-size: 1.6rem
+                text-transform: uppercase
+
+.page-section
+    position: relative
+    padding: 3rem 0
+    @media (min-width: 768px)
+        padding: 5rem 0
+    &__wrapper
+        position: relative
+        z-index: 2
+
+    &__head
+        text-align: right
+        &-wrapper
+            display: flex
+            justify-content: center
+            margin: 0 0 3rem 0
+            @media (min-width: 768px)
+                margin: 0 0 6.4rem 0
+
+
+    &__title
+        line-height: 1.15
+        font-size: 2.8rem
+        font-family: $fontFamilyAdd
+        @media (min-width: 768px)
+            font-size: 5.8rem
+
+
+    &__descrtiption
+        letter-spacing: 0.25em
+        display: inline-block
+        border-top: solid .2rem $colorWhite
+        color: rgba($colorWhite, .7)
+        margin: .7rem 0 0 0
+        padding: .1rem 0 0 0
+        @media (max-width: 767px)
+            font-size: 1.4rem
+        @media (min-width: 768px)
+            margin: .4rem 0 0 0
+            padding: .3rem 0 0 0
+
+.page-decor
+    display: none
+    @media (min-width: 480px)
+        display: block
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        img
+            object-fit: cover
+
+.page-fly
+    display: none
+    @media (min-width: 768px)
+        display: block
+        opacity: .1
+        position: absolute
+        top: 7rem
+        left: 3%
+        z-index: 1
+        font-family: $fontFamilyAdd
+        font-size: 10rem
+        &--right
+            left: auto
+            right: 3%
+    @media (min-width: 1280px)
+        font-size: 14.4rem
+    
+.page-bid
+    margin: .4rem 0 0 0
+    display: flex
+    gap: .8rem
+    justify-content: space-between
+    flex-wrap: wrap
+    font-size: 1.3rem
+    @media (min-width: 768px)
+        font-size: 1.4rem
+
+    &__item
+        >p
+            opacity: .5
+
+    &__unit
+        margin: .5rem 0 0 0
+        z-index: 1
+        position: relative
+        transition: height $trTime, opacity $trTime
+        p
+            opacity: .5
+        span
+            display: inline-flex
+            align-items: center
+            gap: .2rem
+            &:before
+                content: ''
+                width: 2.1rem
+                height: 2rem
+                flex-shrink: 0
+                background-repeat: no-repeat
+                background-size: 100% 100%
+
+    &__unit--value
+        span
+            &:before
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0ibTQuNTgzIDEwLjUgNS44MzQtOS4xNjdMMTYuMjUgMTAuNWwtNS44MzMgMy4zMzNMNC41ODMgMTAuNVoiIGZpbGw9IiM3ODgwRTciLz4KICA8cGF0aCBkPSJNMTAuNDE3IDEuMzMzIDE2LjI1IDEwLjVsLTUuODMzIDMuMzMzdi0xMi41WiIgZmlsbD0iIzVDNjRDNyIvPgogIDxwYXRoIGQ9Im00LjU4MyAxMS43NSA1LjgzNCAzLjMzMyA1LjgzMy0zLjMzMy01LjgzMyA3LjkxNy01LjgzNC03LjkxN1oiIGZpbGw9IiM3ODgwRTciLz4KICA8cGF0aCBkPSJtMTAuNDE3IDE1LjA4MyA1LjgzMy0zLjMzMy01LjgzMyA3LjkxN3YtNC41ODRaTTQuNTgzIDEwLjUgMTAuNDE3IDhsNS44MzMgMi41LTUuODMzIDMuMzMzTDQuNTgzIDEwLjVaIiBmaWxsPSIjNUM2NEM3Ii8+CiAgPHBhdGggZD0ibTEwLjQxNyA4IDUuODMzIDIuNS01LjgzMyAzLjMzM1Y4WiIgZmlsbD0iIzJBMzE5MiIvPgo8L3N2Zz4K")
+
+    &__unit--time
+        span
+            &:before
+                  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzU3XzU0KSI+CjxwYXRoIGQ9Ik04IDMuNUM4IDMuMzY3MzkgNy45NDczMiAzLjI0MDIxIDcuODUzNTUgMy4xNDY0NUM3Ljc1OTc5IDMuMDUyNjggNy42MzI2MSAzIDcuNSAzQzcuMzY3MzkgMyA3LjI0MDIxIDMuMDUyNjggNy4xNDY0NSAzLjE0NjQ1QzcuMDUyNjggMy4yNDAyMSA3IDMuMzY3MzkgNyAzLjVWOUM3LjAwMDAzIDkuMDg4MTMgNy4wMjMzNSA5LjE3NDY5IDcuMDY3NjEgOS4yNTA5MUM3LjExMTg2IDkuMzI3MTIgNy4xNzU0NyA5LjM5MDI5IDcuMjUyIDkuNDM0TDEwLjc1MiAxMS40MzRDMTAuODY2OSAxMS40OTYxIDExLjAwMTQgMTEuNTEwOCAxMS4xMjcgMTEuNDc0OUMxMS4yNTI1IDExLjQzOTEgMTEuMzU5MSAxMS4zNTU2IDExLjQyMzggMTEuMjQyMkMxMS40ODg2IDExLjEyODggMTEuNTA2NSAxMC45OTQ2IDExLjQ3MzYgMTAuODY4M0MxMS40NDA4IDEwLjc0MTkgMTEuMzU5OCAxMC42MzM0IDExLjI0OCAxMC41NjZMOCA4LjcxVjMuNVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik04IDE2QzEwLjEyMTcgMTYgMTIuMTU2NiAxNS4xNTcxIDEzLjY1NjkgMTMuNjU2OUMxNS4xNTcxIDEyLjE1NjYgMTYgMTAuMTIxNyAxNiA4QzE2IDUuODc4MjcgMTUuMTU3MSAzLjg0MzQ0IDEzLjY1NjkgMi4zNDMxNUMxMi4xNTY2IDAuODQyODU1IDEwLjEyMTcgMCA4IDBDNS44NzgyNyAwIDMuODQzNDQgMC44NDI4NTUgMi4zNDMxNSAyLjM0MzE1QzAuODQyODU1IDMuODQzNDQgMCA1Ljg3ODI3IDAgOEMwIDEwLjEyMTcgMC44NDI4NTUgMTIuMTU2NiAyLjM0MzE1IDEzLjY1NjlDMy44NDM0NCAxNS4xNTcxIDUuODc4MjcgMTYgOCAxNlpNMTUgOEMxNSA5Ljg1NjUyIDE0LjI2MjUgMTEuNjM3IDEyLjk0OTcgMTIuOTQ5N0MxMS42MzcgMTQuMjYyNSA5Ljg1NjUyIDE1IDggMTVDNi4xNDM0OCAxNSA0LjM2MzAxIDE0LjI2MjUgMy4wNTAyNSAxMi45NDk3QzEuNzM3NSAxMS42MzcgMSA5Ljg1NjUyIDEgOEMxIDYuMTQzNDggMS43Mzc1IDQuMzYzMDEgMy4wNTAyNSAzLjA1MDI1QzQuMzYzMDEgMS43Mzc1IDYuMTQzNDggMSA4IDFDOS44NTY1MiAxIDExLjYzNyAxLjczNzUgMTIuOTQ5NyAzLjA1MDI1QzE0LjI2MjUgNC4zNjMwMSAxNSA2LjE0MzQ4IDE1IDhaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjxkZWZzPgo8Y2xpcFBhdGggaWQ9ImNsaXAwXzU3XzU0Ij4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSJ3aGl0ZSIvPgo8L2NsaXBQYXRoPgo8L2RlZnM+Cjwvc3ZnPgo=")
+
+.page-creator
+    display: inline-flex
+    gap: .8rem
+    position: relative
+    z-index: 2
+    &--big
+        .page-creator
+            &__icon
+                width: 5rem
+                height: 5rem
+                @media (min-width: 768px)
+                    width: 8rem
+                    height: 8rem
+            &__body
+                line-height: 1.5
+                p
+                    font-size: 1.6rem
+                    @media (min-width: 768px)
+                        font-size: 2rem
+                span
+                    font-size: 1.4rem
+                    @media (min-width: 768px)
+                        font-size: 1.8rem
+
+    &__icon
+        align-self: flex-start
+        border-radius: 50%
+        overflow: hidden
+        flex-shrink: 0
+        width: 3.2rem
+        height: 3.2rem
+        @media (min-width: 768px)
+            width: 4rem
+            height: 4rem
+        img
+            width: 100%
+            height: 100%
+
+
+    &__body
+        align-self: center
+        line-height: 1
+        p
+            font-weight: 600
+            font-size: 1.3rem
+            @media (min-width: 768px)
+                font-size: 1.4rem
+        span
+            font-weight: 500
+            opacity: .5
+            font-size: 1.1rem
+            @media (min-width: 768px)
+                font-size: 1.2rem
+

@@ -1,0 +1,183 @@
+.popup
+    position: fixed
+    z-index: 50
+    width: 0
+    height: 0
+    top: 0
+    left: 0
+    background: rgba(0, 0, 0, 0.8)
+    opacity: 0
+    visibility: hidden
+    overflow-y: auto
+    overflow-x: hidden
+    transition: .6s opacity, .6s visibility, 0s .6s height, 0s .6s width
+    &.open
+        transition: .6s opacity, .6s visibility, 0s 0s height, 0s 0s width
+        opacity: 1
+        width: 100%
+        height: 100%
+        visibility: visible
+        .popup__content
+            transform: translate(0px, 0%)
+            opacity: 1
+            transition: opacity .6s, transform .6s .2s
+    &__body
+        min-height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 3rem 1rem
+        transition: opacity .6s, width .6s, height .6s, visibility .6s
+    &__content
+        background: $colorBg
+        max-width: 60rem
+        width: 100%
+        position: relative
+        opacity: 0
+        transform: translate(0px, -200%)
+        border-radius: 1.6rem
+        border: solid .1rem $colorWhite
+        transition: opacity .6s .2s, transform .6s
+        padding: 3rem 1.5rem
+        @media (min-width: 768px)
+            padding: 4rem 3rem
+
+    &__close
+        position: absolute
+        z-index: 2
+        width: 2.2rem
+        height: 2.2rem
+        display: flex
+        justify-content: center
+        align-items: center
+        top: 1rem
+        right: 1rem
+        transition: transform $trTime
+        @media (min-width: 480px)
+            top: 1.5rem
+            right: 1.5rem
+        &:hover
+            transform: rotate(90deg)
+
+        &:before,
+        &:after
+            content: ""
+            position: absolute
+            width: 100%
+            height: .3rem
+            border-radius: 1rem
+            background-color: $colorWhite
+            transition: transform 0.5s
+
+        &:before
+            transform: rotate(45deg)
+
+        &:after
+            transform: rotate(-45deg)
+    &__title
+        text-align: center
+        font-size: 3.4rem
+        font-family: $fontFamilyAdd
+        margin: 0 0 2rem 0
+    &__links
+        margin: 2rem 0 0 0
+        display: flex
+        justify-content: center
+        a
+            text-decoration: underline
+.popup-template
+    &__title
+        font-size: 2.4rem
+        font-weight: 400
+        margin-bottom: 0.8rem
+    &__text
+        font-weight: 300
+        font-size: 1.6rem
+        line-height: 2.6rem
+        span
+            font-weight: 400
+    &__section
+        padding: 2.5rem
+        @media (max-width: 580px)
+            padding: 2.5rem 1.5rem
+        &--border
+            border-bottom: 1px solid #E3E3E3
+        &--grey
+            background: #F8F8F8
+        &--scroll
+            max-height: 44rem
+            overflow: auto
+            @media (max-width: 479px)
+                max-height: 36.5rem
+    &__item
+        margin: 0 0 2rem 0
+        &:last-child
+            margin: 0
+        .radio
+            width: 100%
+            input
+                &:checked
+                    ~ .card-mini
+                        .card-mini__icon-gift
+                            opacity: 1
+        .checkbox
+            a
+                opacity: 0
+                visibility: hidden
+                transition: .25s all ease
+            input
+                &:checked
+                    ~ a
+                        opacity: 1
+                        visibility: visible
+    &__buttons
+        display: flex
+        justify-content: space-between
+        gap: 3.5rem
+        @media (max-width: 767px)
+            gap: 1.5rem
+        @media (max-width: 479px)
+            flex-wrap: wrap
+        &-text
+            display: flex
+            align-items: center
+            max-width: 50%
+            width: 100%
+            gap: 1.5rem
+            font-weight: 500
+            letter-spacing: 0.5px
+            @media (max-width: 479px)
+                max-width: 100%
+                gap: 1rem
+            img,svg
+                width: 3.6rem
+                height: 3.6rem
+                flex-shrink: 0
+                @media (max-width: 479px)
+                    width: 3rem
+                    height: 3rem
+    &__succes
+        max-width: 33rem
+        margin: 0 auto
+        text-align: center
+        &-icon
+            display: inline-block
+            width: 9rem
+            height: 9rem
+            margin: 0 0 3rem 0
+            @media (max-width: 767px)
+                width: 7rem
+                height: 7rem
+                margin: 0 0 1rem 0
+            img,svg
+                width: 100%
+                height: 100%
+        .page-subtitle
+            margin: 0 0 .8rem 0
+        p
+            line-height: 1.6
+        .popup-template__buttons
+            justify-content: center
+            margin: 3.2rem 0 0 0
+        .btn
+            max-width: 15.6rem

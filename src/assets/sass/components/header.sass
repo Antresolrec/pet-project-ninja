@@ -1,0 +1,169 @@
+.header
+    position: relative
+    height: 6rem
+    @media (min-width: 480px)
+        height: 6.8rem
+    @media (min-width: 768px)
+        height: 11.2rem
+    &__wrapper
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        z-index: 10
+        padding: 1rem 0
+        height: 6rem
+        transition: background-color $trTime
+        @media (min-width: 480px)
+            height: 6.8rem
+        @media (min-width: 768px)
+            padding: 2rem 0
+            height: 11.2rem
+        &._scroll
+            background-color: $colorBg
+
+    &__row
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__column
+        width: 40%
+        &--right
+            display: flex
+            justify-content: flex-end
+            align-items: center
+            gap: 1rem
+            @media (min-width: 480px)
+                gap: 1.5rem
+
+.nav-header
+    &__burger
+        display: block
+        position: relative
+        width: 30px
+        height: 22px
+        cursor: pointer
+        z-index: 2
+        span
+            transition: all 0.3s ease 0s
+            top: calc(50% - 2px)
+            left: 0px
+            position: absolute
+            width: 100%
+            height: 3px
+            background-color: $colorWhite
+            border-radius: 5px
+            &:first-child
+                top: 0
+
+            &:last-child
+                top: auto
+                bottom: 0
+
+        &._open
+            span
+                transform: scale(0)
+                &:first-child
+                    transform: rotate(-45deg)
+                    top: calc(50% - 2px)
+
+                &:last-child
+                    transform: rotate(45deg)
+                    bottom: calc(50% - 1px)
+        @media (min-width: 1024px)
+            display: none
+
+    &__wrapper
+        @media (max-width: 1023px)
+            position: fixed
+            z-index: 1
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            opacity: 0
+            transition: opacity $trTime, transform $trTime
+            display: block
+            overflow-y: scroll
+            overflow-x: hidden
+            transform: translateX(-100%)
+            background-color: $colorBg
+            padding: 10rem 3rem 3rem
+            pointer-events: none
+            &._open
+                opacity: 1
+                pointer-events: all
+                transform: translateX(0)
+        @media (max-width: 767px)
+            padding: 8rem 1.5rem 3rem
+
+.menu
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    @media (max-width: 1023px)
+        font-size: 3rem
+    @media (max-width: 767px)
+        font-size: 2rem
+    @media (min-width: 1024px)
+        gap: 1.2rem 1.8rem
+        flex-direction: row
+        flex-wrap: wrap
+    @media (min-width: 1280px)
+        gap: 1.4rem 4rem
+    .submenu
+        @media (max-width: 1023px)
+            position: relative
+            opacity: 1
+            pointer-events: all
+            transform: translateY(0)
+            display: none
+            padding: 1.5rem 0 0
+            border: none
+            left: auto
+            top: auto
+    >li
+        position: relative
+        &._open
+            @media (min-width: 1024px)
+                .menu__link
+                    color: $colorBlue
+                    border-color: $colorBlue
+                .submenu
+                    opacity: 1
+                    pointer-events: all
+                    transform: translateY(0)
+
+    &__link
+        transition: color $trTime, border-color $trTime
+        &.js-drop
+            border-bottom: dashed .1rem
+            border-color: $colorWhite
+        &:hover
+            color: $colorBlue
+            border-color: $colorBlue
+
+.submenu
+    position: absolute
+    top: calc(100% + .8rem)
+    left: -1rem
+    background-color: $colorBg
+    color: $colorWhite
+    border: solid .1rem $colorWhite
+    border-radius: 1rem
+    padding: .8rem 1rem
+    opacity: 0
+    pointer-events: none
+    transform: translateY(-20px)
+    transition: transform $trTime, opacity $trTime
+
+    li
+        margin: 0 0 .3rem 0
+        &:last-child
+            margin: 0
+        a
+            white-space: nowrap
+            transition: color $trTime
+            &:hover
+                color: $colorBlue

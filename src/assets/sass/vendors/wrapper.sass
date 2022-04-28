@@ -1,0 +1,29 @@
+@import "../variables/variables"
+@import "../mixins/fluid-mixin"
+
+.wrapper
+  display: flex
+  flex-direction: column
+  width: 100%
+  min-height: 100vh
+  overflow: hidden
+  max-width: 2560px
+  margin: 0 auto
+  opacity: 0
+  transition: opacity $trTime
+  &._loaded
+    opacity: 1
+
+  @media print
+    display: block
+
+.page
+  flex: 1 1 auto
+
+.container
+  max-width: 174rem
+  margin: 0 auto
+  width: 100%
+  padding: 0 1.5rem
+  @media (min-width: 768px)
+    padding: 0 3rem

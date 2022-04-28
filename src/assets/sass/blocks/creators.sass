@@ -1,0 +1,52 @@
+.creators
+
+    &__content
+        display: flex
+        flex-wrap: wrap
+        margin: pct-s(-25,1730)
+
+.card-creators
+    padding: pct-s(25,1730)
+    width: 100%
+    max-width: 42.5rem
+    margin: 0 auto
+    @media (min-width: 576px)
+        width: 50%
+        margin: 0
+        max-width: 100%
+    @media (min-width: 1024px)
+        width: 33.333%
+
+    &__item
+        display: block
+        position: relative
+        transition: transform $trTime
+        padding: 4rem 2rem
+        @media (min-width: 576px)
+            padding: 4rem 1.5rem
+        @media (min-width: 768px)
+            padding: 4rem 3rem 5rem
+        &:hover
+            transform: translateY(-5px)
+            .card-creators
+                &__decor
+                    opacity: 1
+
+
+    &__decor
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        opacity: .5
+        transition: opacity $trTime
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+
+

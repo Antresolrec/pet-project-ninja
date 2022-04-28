@@ -1,0 +1,27 @@
+{% from 'mixins/bread-crumbs.njk' import breadCrumbsMixin with context %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body class="off-animations">
+    <div class="wrapper">
+        {% include 'includes/header.njk' %}
+        {{ breadCrumbsMixin(breadCrumbs, breadBackButton) }}
+        <main class="page">
+            {% block content %}{% endblock %}
+        </main>
+        {% include 'includes/footer.njk' %}
+
+        {% include 'blocks/popups/login-popup.njk' %}
+        {% include 'blocks/popups/create-popup.njk' %}
+        {% include 'blocks/popups/cookie-warning-popup.njk' %}
+        {% include 'includes/cookies.njk' %} 
+        {% include 'includes/warning-banner.njk' %} 
+    </div>
+</body>
+</html>

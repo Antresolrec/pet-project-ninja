@@ -1,0 +1,65 @@
+.work
+    &__content
+        display: flex
+        flex-wrap: wrap
+        margin: pct-s(-32, 1744)
+
+.card-work
+    padding: pct-s(32, 1744)
+    @media (min-width: 480px)
+        width: 50%
+    @media (min-width: 768px)
+        width: 33.333%
+    @media (min-width: 1024px)
+        width: 25%
+    &__item
+        display: block
+        height: 100%
+        background-color: #031822
+        box-shadow: 8px 8px 72px rgba(0, 2, 7, 0.1)
+        border-radius: 1.6rem
+        border: solid .2rem $colorBlue
+        text-align: center
+        padding: 1.5rem 1rem
+        @media (min-width: 768px)
+            padding: 2.4rem 2rem
+        @media (min-width: 1024px)
+            transition: transform $trTime
+            &:hover
+                transform: translateY(-10px)
+                .card-work
+                    &__icon
+                        opacity: 1
+                        transform: scale(1.05)
+                    &__title
+                        opacity: 1
+
+
+    &__icon
+        display: inline-block
+        width: 12rem
+        height: 12rem
+        margin: 0 0 .5rem 0
+        @media (min-width: 1024px)
+            opacity: .5
+            transition: opacity $trTime, transform $trTime
+        img
+            width: 100%
+            height: 100%
+
+
+    &__title
+        font-weight: 600
+        font-size: 1.8rem
+        @media (min-width: 768px)
+            font-size: 2.4rem
+        @media (min-width: 1024px)
+            opacity: .5
+            transition: opacity $trTime
+
+    &__text
+        margin: .8rem 0 0 0
+        font-size: 1.4rem
+        opacity: .5
+
+

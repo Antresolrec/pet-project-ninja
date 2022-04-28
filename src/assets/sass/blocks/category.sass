@@ -1,0 +1,76 @@
+.category
+    &__content
+        display: flex
+        flex-wrap: wrap
+        margin: pct-s(-32,1744)
+
+
+
+.card-category
+    padding: pct-s(32,1744)
+    width: 100%
+    @media (min-width: 480px)
+        width: 50%
+    @media (min-width: 768px)
+        width: 33.333%
+    @media (min-width: 1024px)
+        width: 25%
+
+    &__item
+        display: block
+        padding: .8rem
+        background-color: #04131A
+        border-radius: 1.6rem
+        overflow: hidden
+        position: relative
+        @media (min-width: 1024px)
+            &:hover
+                .card-category
+                    &__img
+                        opacity: 1
+                        img
+                            transform: scale(1.05)
+    &__img
+        position: relative
+        z-index: 1
+        padding-bottom: pct-s(361,356)
+        border-radius: 1.6rem
+        overflow: hidden
+        @media (min-width: 1024px)
+            opacity: .5
+            transition: opacity $trTime
+
+        img
+            object-fit: cover
+            @media (min-width: 1024px)
+                transition: transform $trTime
+
+
+    &__body
+        position: absolute
+        bottom: 0
+        width: 100%
+        left: 0
+        z-index: 2
+        background: rgba(255, 255, 255, 0.1)
+        padding: .8rem 1rem
+        @media (min-width: 768px)
+            padding: .8rem 2rem
+        &:before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            backdrop-filter: blur(2px)
+            z-index: 0
+
+
+    &__title
+        font-size: 2.2rem
+        font-weight: 600
+        z-index: 1
+        position: relative
+
+
