@@ -175,6 +175,7 @@ module.exports = {
       { from: 'src/assets/img/content', to: 'content' },
       { from: 'src/assets/json', to: 'json' },
       { from: 'src/assets/css', to: 'css' },
+      { from: 'src/assets/favicons', to: 'favicons' },
     ]),
     new VueLoaderPlugin(),
   ],
