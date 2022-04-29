@@ -9,7 +9,7 @@ class IntroSlider {
 
   initSlider() {
     this.swiperSlider = new Swiper(this.slider, {
-      speed: 700,
+      speed: 500,
       clickable: true,
       slidesPerView: 'auto',
       slideToClickedSlide: true,
