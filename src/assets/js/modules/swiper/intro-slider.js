@@ -15,9 +15,9 @@ class IntroSlider {
       slideToClickedSlide: true,
       centeredSlides: true,
       loop: true,
-      // autoplay: {
-      //   delay: 1000,
-      // },
+      autoplay: {
+        delay: 5000,
+      },
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
