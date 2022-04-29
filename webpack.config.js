@@ -18,6 +18,11 @@ const PATHS = {
   dist: path.join(__dirname, 'dist'),
 };
 
+const ajaxDir = `${PATHS.src}/ajax/`;
+const ajaxBlocks = fs
+  .readdirSync(ajaxDir)
+  .filter((fileName) => fileName.endsWith('.njk'));
+
 const pagesDir = `${PATHS.src}/html/pages/`;
 
 const pages = fs
@@ -67,7 +72,7 @@ module.exports = {
           {
             loader: 'simple-nunjucks-loader',
             options: {
-              searchPaths: ['src/html'],
+              searchPaths: ['src/html', 'src/ajax'],
             },
           },
         ],
@@ -144,6 +149,15 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: `${pagesDir}/${page}`,
           filename: `./${page.replace(/\.njk/, '.html')}`,
+          minify: false,
+          env: process.env,
+        })
+    ),
+    ...ajaxBlocks.map(
+      (block) =>
+        new HtmlWebpackPlugin({
+          template: `${ajaxDir}/${block}`,
+          filename: `./ajax/${block.replace(/\.njk/, '.html')}`,
           minify: false,
           env: process.env,
         })

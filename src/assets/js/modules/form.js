@@ -1,4 +1,4 @@
-import popupOpen from './popups';
+import popupOpenUniversalForm from './popups';
 
 const forms = document.querySelectorAll('.js-form');
 
@@ -126,24 +126,28 @@ forms.forEach((form) => {
                   document.location.reload();
                   // console.log('reload')
                 } else if (obj.message || obj.title) {
-                  popupOpen(
+                  popupOpenUniversalForm(
                     obj.title ? obj.title : '',
                     obj.message ? obj.message : ''
                   );
                 } else {
-                  popupOpen(messageTitle, messageText);
+                  popupOpenUniversalForm(messageTitle, messageText);
                 }
               } catch (e) {
                 // console.log(e);
-                popupOpen(messageTitle, messageText, true);
+                popupOpenUniversalForm(messageTitle, messageText, true);
               }
             } else {
-              popupOpen(messageTitle, messageText, true);
+              popupOpenUniversalForm(messageTitle, messageText, true);
             }
           } else {
             // callback ошибки на сервере
             // self._callbackError();
-            popupOpen('Ошибка сервера', 'Повторите попытку позже', true);
+            popupOpenUniversalForm(
+              'Server Error',
+              'Repeat February Later',
+              true
+            );
           }
         });
 
@@ -182,11 +186,11 @@ forms.forEach((form) => {
           if (ajax.status === 200) {
             // callback успешной отправки
             // self._callbackDone();
-            popupOpen(messageTitle, messageText);
+            popupOpenUniversalForm(messageTitle, messageText);
           } else {
             // callback ошибки на сервере
             // self._callbackError();
-            popupOpen('Ошибка сервера', 'Повторите попытку позже');
+            popupOpenUniversalForm('Server Error', 'Repeat February Later');
           }
         });
 

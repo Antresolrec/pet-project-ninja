@@ -10,14 +10,6 @@
 
 {% block content %}
 
-    <div class="page-decor img-response">
-        <picture>
-            <source media="(max-width: 479px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
-            <img class="mouse-parallax" src="content/page-bg.png" alt="" aria-hidden="true">
-        </picture>
-    </div>
-    <a href="#wrapper" class="back-to-top _goto"></a>
-
     <section class="intro page-section">
         <div class="page-section__wrapper container">
             <div class="intro__head js-anim">
@@ -252,33 +244,90 @@
                     <span class="page-section__descrtiption">Most valued bids</span>
                 </div>
             </div>
-            <div class="auction__content">
-                <div class="card-auction js-anim">
-                    <a href="#" class="card-auction__item">
-                        <div class="card-auction__content">
-                            <div class="card-auction__img img-response">
-                                <picture>
-                                    <source type="image/webp" srcset="content/auction-01.webp">
-                                    <img src="content/auction-01.jpg" alt="photo">
-                                </picture>
-                            </div>
-                            <div class="card-auction__body">
-                                <h3 class="card-auction__title">Noun Street Explore</h3>
-                                <div class="page-bid">
-                                    <div class="page-bid__item">
-                                        <p>Current Bid:</p>
-                                        <div class="page-bid__unit page-bid__unit--value">
-                                            <span>0.45 ETH ($1200)</span>
+            <div class="auction__content-wrapper js-load-section">
+                <div class="auction__content js-load-target">
+                    <div class="card-auction js-anim js-load-item">
+                        <a href="#" class="card-auction__item">
+                            <div class="card-auction__content">
+                                <div class="card-auction__img img-response">
+                                    <picture>
+                                        <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/auction-01.webp">
+                                        <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/auction-01.jpg" alt="photo">
+                                    </picture>
+                                </div>
+                                <div class="card-auction__body">
+                                    <h3 class="card-auction__title">Noun Street Explore</h3>
+                                    <div class="page-bid">
+                                        <div class="page-bid__item">
+                                            <p>Current Bid:</p>
+                                            <div class="page-bid__unit page-bid__unit--value">
+                                                <span>0.45 ETH ($1200)</span>
+                                            </div>
+                                        </div>
+                                        <div class="page-bid__item">
+                                            <p>Ends In:</p>
+                                            <div class="page-bid__unit page-bid__unit--time">
+                                                <span>13h 49m 25s</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="page-bid__item">
-                                        <p>Ends In:</p>
-                                        <div class="page-bid__unit page-bid__unit--time">
-                                            <span>13h 49m 25s</span>
+                                    <div class="card-auction__bottom">
+                                        <div class="card-auction__bottom-row">
+                                            <div class="page-creator">
+                                                <div class="page-creator__icon">
+                                                    <picture>
+                                                        <source type="image/webp" srcset="content/creator-01.webp">
+                                                        <img src="content/creator-01.png" alt="photo">
+                                                    </picture>
+                                                </div>
+                                                <div class="page-creator__body">
+                                                    <p>Rose Bush</p>
+                                                    <span>Owner</span>
+                                                </div>
+                                            </div>
+                                            <div class="page-creator">
+                                                <div class="page-creator__icon">
+                                                    <picture>
+                                                        <source type="image/webp" srcset="content/creator-02.webp">
+                                                        <img src="content/creator-02.png" alt="photo">
+                                                    </picture>
+                                                </div>
+                                                <div class="page-creator__body">
+                                                    <p>Hank R. Cheef</p>
+                                                    <span>Creater</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-auction__bottom">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-auction js-anim js-load-item">
+                        <a href="#" class="card-auction__item">
+                            <div class="card-auction__content">
+                                <div class="card-auction__img img-response">
+                                    <picture>
+                                        <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/auction-02.webp">
+                                        <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/auction-02.jpg" alt="photo">
+                                    </picture>
+                                </div>
+                                <div class="card-auction__body">
+                                    <h3 class="card-auction__title">Noun Street Explore</h3>
+                                    <div class="page-bid">
+                                        <div class="page-bid__item">
+                                            <p>Current Bid:</p>
+                                            <div class="page-bid__unit page-bid__unit--value">
+                                                <span>0.45 ETH ($1200)</span>
+                                            </div>
+                                        </div>
+                                        <div class="page-bid__item">
+                                            <p>Ends In:</p>
+                                            <div class="page-bid__unit page-bid__unit--time">
+                                                <span>13h 49m 25s</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="card-auction__bottom-row">
                                         <div class="page-creator">
                                             <div class="page-creator__icon">
@@ -307,173 +356,124 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="card-auction js-anim js-load-item">
+                        <a href="#" class="card-auction__item">
+                            <div class="card-auction__content">
+                                <div class="card-auction__img img-response">
+                                    <picture>
+                                        <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/auction-03.webp">
+                                        <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/auction-03.jpg" alt="photo">
+                                    </picture>
+                                </div>
+                                <div class="card-auction__body">
+                                    <h3 class="card-auction__title">Noun Street Explore</h3>
+                                    <div class="page-bid">
+                                        <div class="page-bid__item">
+                                            <p>Current Bid:</p>
+                                            <div class="page-bid__unit page-bid__unit--value">
+                                                <span>0.45 ETH ($1200)</span>
+                                            </div>
+                                        </div>
+                                        <div class="page-bid__item">
+                                            <p>Ends In:</p>
+                                            <div class="page-bid__unit page-bid__unit--time">
+                                                <span>13h 49m 25s</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-auction__bottom-row">
+                                        <div class="page-creator">
+                                            <div class="page-creator__icon">
+                                                <picture>
+                                                    <source type="image/webp" srcset="content/creator-01.webp">
+                                                    <img src="content/creator-01.png" alt="photo">
+                                                </picture>
+                                            </div>
+                                            <div class="page-creator__body">
+                                                <p>Rose Bush</p>
+                                                <span>Owner</span>
+                                            </div>
+                                        </div>
+                                        <div class="page-creator">
+                                            <div class="page-creator__icon">
+                                                <picture>
+                                                    <source type="image/webp" srcset="content/creator-02.webp">
+                                                    <img src="content/creator-02.png" alt="photo">
+                                                </picture>
+                                            </div>
+                                            <div class="page-creator__body">
+                                                <p>Hank R. Cheef</p>
+                                                <span>Creater</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-auction js-anim js-load-item">
+                        <a href="#" class="card-auction__item">
+                            <div class="card-auction__content">
+                                <div class="card-auction__img img-response">
+                                    <picture>
+                                        <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/auction-04.webp">
+                                        <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/auction-04.jpg" alt="photo">
+                                    </picture>
+                                </div>
+                                <div class="card-auction__body">
+                                    <h3 class="card-auction__title">Noun Street Explore</h3>
+                                    <div class="page-bid">
+                                        <div class="page-bid__item">
+                                            <p>Current Bid:</p>
+                                            <div class="page-bid__unit page-bid__unit--value">
+                                                <span>0.45 ETH ($1200)</span>
+                                            </div>
+                                        </div>
+                                        <div class="page-bid__item">
+                                            <p>Ends In:</p>
+                                            <div class="page-bid__unit page-bid__unit--time">
+                                                <span>13h 49m 25s</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-auction__bottom-row">
+                                        <div class="page-creator">
+                                            <div class="page-creator__icon">
+                                                <picture>
+                                                    <source type="image/webp" srcset="content/creator-01.webp">
+                                                    <img src="content/creator-01.png" alt="photo">
+                                                </picture>
+                                            </div>
+                                            <div class="page-creator__body">
+                                                <p>Rose Bush</p>
+                                                <span>Owner</span>
+                                            </div>
+                                        </div>
+                                        <div class="page-creator">
+                                            <div class="page-creator__icon">
+                                                <picture>
+                                                    <source type="image/webp" srcset="content/creator-02.webp">
+                                                    <img src="content/creator-02.png" alt="photo">
+                                                </picture>
+                                            </div>
+                                            <div class="page-creator__body">
+                                                <p>Hank R. Cheef</p>
+                                                <span>Creater</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="card-auction js-anim">
-                    <a href="#" class="card-auction__item">
-                        <div class="card-auction__content">
-                            <div class="card-auction__img img-response">
-                                <picture>
-                                    <source type="image/webp" srcset="content/auction-02.webp">
-                                    <img src="content/auction-02.jpg" alt="photo">
-                                </picture>
-                            </div>
-                            <div class="card-auction__body">
-                                <h3 class="card-auction__title">Noun Street Explore</h3>
-                                <div class="page-bid">
-                                    <div class="page-bid__item">
-                                        <p>Current Bid:</p>
-                                        <div class="page-bid__unit page-bid__unit--value">
-                                            <span>0.45 ETH ($1200)</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-bid__item">
-                                        <p>Ends In:</p>
-                                        <div class="page-bid__unit page-bid__unit--time">
-                                            <span>13h 49m 25s</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-auction__bottom-row">
-                                    <div class="page-creator">
-                                        <div class="page-creator__icon">
-                                            <picture>
-                                                <source type="image/webp" srcset="content/creator-01.webp">
-                                                <img src="content/creator-01.png" alt="photo">
-                                            </picture>
-                                        </div>
-                                        <div class="page-creator__body">
-                                            <p>Rose Bush</p>
-                                            <span>Owner</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-creator">
-                                        <div class="page-creator__icon">
-                                            <picture>
-                                                <source type="image/webp" srcset="content/creator-02.webp">
-                                                <img src="content/creator-02.png" alt="photo">
-                                            </picture>
-                                        </div>
-                                        <div class="page-creator__body">
-                                            <p>Hank R. Cheef</p>
-                                            <span>Creater</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card-auction js-anim">
-                    <a href="#" class="card-auction__item">
-                        <div class="card-auction__content">
-                            <div class="card-auction__img img-response">
-                                <picture>
-                                    <source type="image/webp" srcset="content/auction-03.webp">
-                                    <img src="content/auction-03.jpg" alt="photo">
-                                </picture>
-                            </div>
-                            <div class="card-auction__body">
-                                <h3 class="card-auction__title">Noun Street Explore</h3>
-                                <div class="page-bid">
-                                    <div class="page-bid__item">
-                                        <p>Current Bid:</p>
-                                        <div class="page-bid__unit page-bid__unit--value">
-                                            <span>0.45 ETH ($1200)</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-bid__item">
-                                        <p>Ends In:</p>
-                                        <div class="page-bid__unit page-bid__unit--time">
-                                            <span>13h 49m 25s</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-auction__bottom-row">
-                                    <div class="page-creator">
-                                        <div class="page-creator__icon">
-                                            <picture>
-                                                <source type="image/webp" srcset="content/creator-01.webp">
-                                                <img src="content/creator-01.png" alt="photo">
-                                            </picture>
-                                        </div>
-                                        <div class="page-creator__body">
-                                            <p>Rose Bush</p>
-                                            <span>Owner</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-creator">
-                                        <div class="page-creator__icon">
-                                            <picture>
-                                                <source type="image/webp" srcset="content/creator-02.webp">
-                                                <img src="content/creator-02.png" alt="photo">
-                                            </picture>
-                                        </div>
-                                        <div class="page-creator__body">
-                                            <p>Hank R. Cheef</p>
-                                            <span>Creater</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card-auction js-anim">
-                    <a href="#" class="card-auction__item">
-                        <div class="card-auction__content">
-                            <div class="card-auction__img img-response">
-                                <picture>
-                                    <source type="image/webp" srcset="content/auction-04.webp">
-                                    <img src="content/auction-04.jpg" alt="photo">
-                                </picture>
-                            </div>
-                            <div class="card-auction__body">
-                                <h3 class="card-auction__title">Noun Street Explore</h3>
-                                <div class="page-bid">
-                                    <div class="page-bid__item">
-                                        <p>Current Bid:</p>
-                                        <div class="page-bid__unit page-bid__unit--value">
-                                            <span>0.45 ETH ($1200)</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-bid__item">
-                                        <p>Ends In:</p>
-                                        <div class="page-bid__unit page-bid__unit--time">
-                                            <span>13h 49m 25s</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-auction__bottom-row">
-                                    <div class="page-creator">
-                                        <div class="page-creator__icon">
-                                            <picture>
-                                                <source type="image/webp" srcset="content/creator-01.webp">
-                                                <img src="content/creator-01.png" alt="photo">
-                                            </picture>
-                                        </div>
-                                        <div class="page-creator__body">
-                                            <p>Rose Bush</p>
-                                            <span>Owner</span>
-                                        </div>
-                                    </div>
-                                    <div class="page-creator">
-                                        <div class="page-creator__icon">
-                                            <picture>
-                                                <source type="image/webp" srcset="content/creator-02.webp">
-                                                <img src="content/creator-02.png" alt="photo">
-                                            </picture>
-                                        </div>
-                                        <div class="page-creator__body">
-                                            <p>Hank R. Cheef</p>
-                                            <span>Creater</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                <div class="page-btn-wrapper js-load">
+                    <button type="button" data-url="ajax/auction-items.html" class="btn fill-effect">
+                        <span>Show more</span>
+                        <i></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -493,8 +493,8 @@
                     <a href="#" class="card-work__item">
                         <div class="card-work__icon">
                             <picture>
-                                <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/icons/icon-work-01.webp">
-                                <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/icons/icon-work-01.png" alt="photo">
+                                <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/icons/icon-work-01.webp">
+                                <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/icons/icon-work-01.png" alt="photo">
                             </picture>
                         </div>
                         <h3 class="card-work__title">Set up wallet</h3>
@@ -507,8 +507,8 @@
                     <a href="#" class="card-work__item">
                         <div class="card-work__icon">
                             <picture>
-                                <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/icons/icon-work-02.webp">
-                                <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/icons/icon-work-02.png" alt="photo">
+                                <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/icons/icon-work-02.webp">
+                                <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/icons/icon-work-02.png" alt="photo">
                             </picture>
                         </div>
                         <h3 class="card-work__title">Create collection</h3>
@@ -521,8 +521,8 @@
                     <a href="#" class="card-work__item">
                         <div class="card-work__icon">
                             <picture>
-                                <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/icons/icon-work-03.webp">
-                                <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/icons/icon-work-03.png" alt="photo">
+                                <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/icons/icon-work-03.webp">
+                                <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/icons/icon-work-03.png" alt="photo">
                             </picture>
                         </div>
                         <h3 class="card-work__title">Add NFTs</h3>
@@ -535,8 +535,8 @@
                     <a href="#" class="card-work__item">
                         <div class="card-work__icon">
                             <picture>
-                                <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/icons/icon-work-04.webp">
-                                <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/icons/icon-work-04.png" alt="photo">
+                                <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/icons/icon-work-04.webp">
+                                <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/icons/icon-work-04.png" alt="photo">
                             </picture>
                         </div>
                         <h3 class="card-work__title">List for sale</h3>
@@ -776,8 +776,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-01.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-01.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-01.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-01.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -791,8 +791,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-02.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-02.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-02.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-02.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -806,8 +806,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-03.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-03.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-03.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-03.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -821,8 +821,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-04.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-04.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-04.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-04.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -836,8 +836,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-05.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-05.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-05.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-05.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -851,8 +851,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-06.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-06.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-06.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-06.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -866,8 +866,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-07.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-07.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-07.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-07.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">
@@ -881,8 +881,8 @@
                         <div class="card-category__content">
                             <div class="card-category__img img-response">
                                 <picture>
-                                    <source type="image/webp" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="content/category-08.webp">
-                                    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="content/category-08.jpg" alt="photo">
+                                    <source type="image/webp" srcset="{% include 'includes/plug.njk' %}" data-srcset="content/category-08.webp">
+                                    <img class="lazyload" src="{% include 'includes/plug.njk' %}" data-src="content/category-08.jpg" alt="photo">
                                 </picture>
                             </div>
                             <div class="card-category__body">

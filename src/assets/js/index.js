@@ -62,6 +62,8 @@
 
 // import './modules/swiper/compare-slider';
 
+import './modules/fix-ie';
+
 import './modules/lazyload';
 
 import './modules/cookie';
@@ -71,6 +73,8 @@ import './modules/custom-drop-menu';
 import './modules/spollers';
 
 import './modules/burger';
+
+import './modules/ajaxLoad';
 
 import './modules/header-scroll';
 
