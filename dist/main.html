@@ -13,7 +13,7 @@
         <meta property="og:image" content="content/intro-01.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://antresolrec.github.io/pet-project-ninja/dist/main.html" />
-        <link href="favicon.svg" sizes="any" rel="icon" type="image/svg+xml">
+        <link rel="icon" sizes="any" type="image/svg+xml" href="favicon.svg">
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -1014,17 +1014,17 @@
                         </div>
                         <div class="request__content js-anim">
                             <div class="form-wrapper">
-                                <form action="/" method="get" class="form js-form" novalidate>
+                                <form action="/" method="post" class="form js-form" novalidate>
                                     <div class="form__items">
                                         <div class="form__item">
                                             <label class="form-input">
-                                                <input type="email" placeholder="Email *" data-validate="email">
+                                                <input type="email" placeholder="Email *" name="email" data-validate="email">
                                                 <span class="form-error">Some text of error</span>
                                             </label>
                                         </div>
                                         <div class="form__item">
                                             <label class="form-input">
-                                                <input type="tel" placeholder="Phone *" data-validate="phone" class="phone-mask">
+                                                <input type="tel" placeholder="Phone *" data-validate="phone" name="phone" class="phone-mask">
                                                 <span class="form-error">Some text of error</span>
                                             </label>
                                         </div>
@@ -1146,17 +1146,17 @@
                             Log in
                         </h3>
                         <div class="popup__block">
-                            <form action="/" method="get" class="form js-form" novalidate>
+                            <form action="/" method="post" class="form js-form" novalidate>
                                 <div class="form__items">
                                     <div class="form__item">
                                         <label class="form-input">
-                                            <input type="text" placeholder="Login *" data-validate="text">
+                                            <input type="text" placeholder="Login *" name="login" data-validate="text">
                                             <span class="form-error">Some text of error</span>
                                         </label>
                                     </div>
                                     <div class="form__item">
                                         <label class="form-input">
-                                            <input type="password" placeholder="Password *" data-validate="pass">
+                                            <input type="password" placeholder="Password *" name="password" data-validate="pass">
                                             <span class="form-error">Some text of error</span>
                                         </label>
                                     </div>
@@ -1183,17 +1183,17 @@
                             Create
                         </h3>
                         <div class="popup__block">
-                            <form action="/" method="get" class="form js-form" novalidate>
+                            <form action="/" method="post" class="form js-form" novalidate>
                                 <div class="form__items">
                                     <div class="form__item">
                                         <label class="form-input">
-                                            <input type="text" placeholder="Some text *" data-validate="text">
+                                            <input type="text" placeholder="Some text *" name="text1" data-validate="text">
                                             <span class="form-error">Some text of error</span>
                                         </label>
                                     </div>
                                     <div class="form__item">
                                         <label class="form-input">
-                                            <input type="text" placeholder="Some text *" data-validate="text">
+                                            <input type="text" placeholder="Some text *" name="text2" data-validate="text">
                                             <span class="form-error">Some text of error</span>
                                         </label>
                                     </div>

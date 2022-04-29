@@ -6,17 +6,17 @@
                 Log in
             </h3>
             <div class="popup__block">
-                <form action="/" method="get" class="form js-form" novalidate>
+                <form action="/" method="post" class="form js-form" novalidate>
                     <div class="form__items">
                         <div class="form__item">
                             <label class="form-input">
-                                <input type="text" placeholder="Login *" data-validate="text">
+                                <input type="text" placeholder="Login *" name="login" data-validate="text">
                                 <span class="form-error">Some text of error</span>
                             </label>
                         </div>
                         <div class="form__item">
                             <label class="form-input">
-                                <input type="password" placeholder="Password *" data-validate="pass">
+                                <input type="password" placeholder="Password *" name="password" data-validate="pass">
                                 <span class="form-error">Some text of error</span>
                             </label>
                         </div>
