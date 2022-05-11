@@ -26,8 +26,8 @@
         {% include 'includes/header.njk' %}
         {{ breadCrumbsMixin(breadCrumbs, breadBackButton) }}
         <main class="page">
-            {% include 'includes/page-components.njk' %}
             {% block content %}{% endblock %}
+            {% include 'includes/page-components.njk' %}
         </main>
         {% include 'includes/footer.njk' %}
         {% include 'blocks/popups/universal-form.njk' %}

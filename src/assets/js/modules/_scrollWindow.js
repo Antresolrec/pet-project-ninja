@@ -1,11 +1,10 @@
-import setScroll from './scroll';
 import scrollHeader from './header-scroll';
 import trackScroll from './backToTop';
+import { setScroll, activeLinks } from './scroll';
 
 window.addEventListener('scroll', () => {
   scrollHeader();
   trackScroll();
-  setTimeout(() => {
-    setScroll();
-  }, 100);
+  activeLinks();
+  setScroll();
 });

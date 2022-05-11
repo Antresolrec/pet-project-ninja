@@ -129,25 +129,3 @@ if (spollers) {
 // window.initSpollersGlobal = initSpoller;
 
 /* eslint-enable */
-
-const spollersReverse = document.querySelectorAll('.spoller-reverse');
-
-if (spollersReverse) {
-  spollersReverse.forEach((el) => {
-    const triggers = el.querySelectorAll('.spoller-reverse__trigger');
-    const content = el.querySelector('.spoller-reverse__content');
-    triggers.forEach((trigger) => {
-      trigger.addEventListener('click', () => {
-        if (trigger.classList.contains('spoller-reverse__down')) {
-          slideDown(content, 500);
-          triggers[0].classList.remove('show');
-          triggers[1].classList.add('show');
-        } else {
-          slideUp(content, 500);
-          triggers[1].classList.remove('show');
-          triggers[0].classList.add('show');
-        }
-      });
-    });
-  });
-}

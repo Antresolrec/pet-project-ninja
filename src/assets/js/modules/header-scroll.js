@@ -1,11 +1,17 @@
-export default function scrollHeader() {
-  const srcValue = window.pageYOffset;
-  const header = document.querySelector('.header__wrapper');
-  if (header !== null) {
+const header = document.querySelector('.header__wrapper');
+const scrollClass = '_scroll';
+
+function scrollHeader() {
+  if (header) {
+    const srcValue = window.pageYOffset;
     if (srcValue > 0) {
-      header.classList.add('_scroll');
+      header.classList.add(scrollClass);
     } else {
-      header.classList.remove('_scroll');
+      header.classList.remove(scrollClass);
     }
   }
 }
+
+scrollHeader();
+
+export default scrollHeader;
