@@ -1128,6 +1128,19 @@
                 </div>
             </div>
         </div>
+        <script>
+            let uA = window.navigator.userAgent;
+
+            function isIE() {
+                uA = navigator.userAgent;
+                const isIe = uA.indexOf('MSIE ') > -1 || uA.indexOf('Trident/') > -1;
+                return isIe;
+            }
+            if (isIE()) {
+                document.querySelector('html').classList.add('fix-ie');
+            }
+
+        </script>
         <script src="js/vendors.min.js"></script>
         <script src="js/main.min.js"></script>
     </body>
